@@ -35,22 +35,25 @@ body {
 .btnList {
   display: flex;
   align-items: center;
-  justify-content: end;}
+  justify-content: end;
+}
 .nav-heading {
   color: white;
   font-size: xx-large;
 }
 .btnList > button {
-  border: 0.5px solid white;
-  background-color: rgba(245, 245, 245, 0.123);
-  border-radius: 40%;
-  width: 80px;
-  height: 25px;
-  margin-left: 10px;
+  padding: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  background-color: rgba(255, 255, 255, 0.055);
+  border: 0.4px solid white;
+  margin-right: 7%;
+  border-radius: 50px;
   color: white;
+  font-size: 15px;
 }
 
-.body{
+.body {
   display: flex;
   gap: 10px;
 }
@@ -58,11 +61,44 @@ body {
   background-color: aquamarine;
   width: 33%;
   height: 200px;
-  padding: 0 15px 0 15px;
-  border-radius: 5px;
-  border: 0.4px solid white;
+  padding: 10px 15px 15px 15px;
+  border-radius: 15px;
+  border: 0.4px solid rgba(255, 255, 255, 0.253);
   background-color: rgba(245, 245, 245, 0.123);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+}
+.extcard {
+  color: rgba(255, 255, 255, 0.493);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.extcard > div:first-child {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.extcard > div:first-child > p > strong {
+  color: white;
+  margin-bottom: 10px;
+}
+.extcard > div:last-child {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.extcard > div:last-child > button:first-child {
+  padding: 2%;
+  background-color: transparent;
+  border: 0.4px solid white;
+  border-radius: 50px;
+  color: white;
+  font-size: 15px;
+}
+
+.attribution {
+  margin-top: 50vw;
 }

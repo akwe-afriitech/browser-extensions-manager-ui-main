@@ -23,10 +23,38 @@ console.log(jsonData[0]);
 darkBtn.onclick = function () {
   console.log(jsonData[2].name);
 
-//   body.classList.add("dark-theme");
-//   body.classList.remove("light-theme");
+  //   body.classList.add("dark-theme");
+  //   body.classList.remove("light-theme");
 };
 lightBtn.onclick = function () {
-//   body.classList.add("light-theme");
-//   body.classList.remove("dark-theme");
+  //   body.classList.add("light-theme");
+  //   body.classList.remove("dark-theme");
 };
+
+let card = document.createElement("div");
+card.className = "extcard";
+
+setTimeout(() => {
+  for (let i = 0; i < 12; i++) {
+    card.innerHTML = ` <div class="extcard">
+          <div>
+            <img src="${jsonData[i].logo}" alt="" />
+
+            <p>
+              <strong>${jsonData[i].name}</strong>
+              <br>
+              ${jsonData[i].description}
+            </p>
+          </div>
+          <div class="cardopt">
+            <button>Remove</button>
+            <button>Swithc</button>
+          </div>
+        </div>`;
+        console.log(i)
+  }
+    body.appendChild(card);
+
+}, 1000);
+
+
