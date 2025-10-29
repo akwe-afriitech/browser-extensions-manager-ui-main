@@ -31,30 +31,51 @@ lightBtn.onclick = function () {
   //   body.classList.remove("dark-theme");
 };
 
-let card = document.createElement("div");
-card.className = "extcard";
 
 setTimeout(() => {
-  for (let i = 0; i < 12; i++) {
-    card.innerHTML = ` <div class="extcard">
-          <div>
-            <img src="${jsonData[i].logo}" alt="" />
-
-            <p>
-              <strong>${jsonData[i].name}</strong>
-              <br>
-              ${jsonData[i].description}
-            </p>
-          </div>
-          <div class="cardopt">
-            <button>Remove</button>
-            <button>Swithc</button>
-          </div>
-        </div>`;
-        console.log(i)
+  if (Array.isArray(jsonData) && jsonData.length >= 12) {
+    for (let i = 0; i < 12; i++) {
+      let card = document.createElement("div");
+      card.className = "extcard";
+      card.innerHTML = `
+        <div>
+          <img src="${jsonData[i].logo}" alt="" />
+          <p>
+            <strong>${jsonData[i].name}</strong>
+            <br>
+            ${jsonData[i].description}
+          </p>
+        </div>
+        <div class="cardopt">
+          <button>Remove</button>
+          <button>Switch</button>
+        </div>
+      `;
+      body.appendChild(card);
+    }
+  } else {
+    console.error("jsonData does not have at least 12 elements.");
   }
-    body.appendChild(card);
-
 }, 1000);
 
+const buttonGroup = document.querySelector(".btnList");
+const buttons = buttonGroup.querySelectorAll(".menu-button");
 
+buttonGroup.addEventListener("click", function (event) {
+  // Check if the clicked element is a button
+  if (event.target.classList.contains("menu-button")) {
+    // Remove the 'active' class from any currently active button
+    const currentActive = document.querySelector(".menu-button.active");
+    if (currentActive) {
+      currentActive.classList.remove("active");
+    }
+
+    // Add the 'active' class to the newly clicked button
+    event.target.classList.add("active");
+
+    // Log a different number for each button
+    const buttonsArray = Array.from(buttons);
+    const index = buttonsArray.indexOf(event.target);
+    console.log(index);
+  }
+});

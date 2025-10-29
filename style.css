@@ -52,14 +52,29 @@ body {
   color: white;
   font-size: 15px;
 }
+.btnList > button:hover {
+  background-color: orangered;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btnList > button.active {
+  background-color: orangered;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 .body {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .body > div {
   background-color: aquamarine;
-  width: 33%;
+  width: 30%;
   height: 200px;
   padding: 10px 15px 15px 15px;
   border-radius: 15px;
@@ -100,5 +115,5 @@ body {
 }
 
 .attribution {
-  margin-top: 50vw;
+  margin-top: 10vw;
 }
