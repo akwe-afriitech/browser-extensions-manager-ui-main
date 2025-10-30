@@ -1,6 +1,7 @@
 const body = document.getElementById("body");
 const darkBtn = document.getElementById("dark-btn");
 const lightBtn = document.getElementById("light-btn");
+const page = document.getElementById("page");
 
 let jsonData = {};
 
@@ -21,16 +22,15 @@ fetch("data.json")
 
 console.log(jsonData[0]);
 darkBtn.onclick = function () {
-  console.log(jsonData[2].name);
-
-  //   body.classList.add("dark-theme");
-  //   body.classList.remove("light-theme");
+  document.body.classList.toggle("light-theme");
+  darkBtn.classList.add("hide");
+  lightBtn.classList.remove("hide");
 };
 lightBtn.onclick = function () {
-  //   body.classList.add("light-theme");
-  //   body.classList.remove("dark-theme");
+  document.body.classList.toggle("light-theme");
+  lightBtn.classList.add("hide");
+  darkBtn.classList.remove("hide");
 };
-
 
 setTimeout(() => {
   if (Array.isArray(jsonData) && jsonData.length >= 12) {

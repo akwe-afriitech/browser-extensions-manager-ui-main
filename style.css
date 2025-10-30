@@ -1,16 +1,40 @@
+:root {
+  --primary-bg: hsl(229, 48%, 18%);
+  --light-bg: hsl(0, 0%, 100%);
+  --transparent-white: rgba(245, 245, 245, 0.123);
+  --white: white;
+  --black: black;
+  --orange: orangered;
+  --semi-transparent-white: rgba(255, 255, 255, 0.493);
+  --border-color: rgba(255, 255, 255, 0.253);
+  
+}
+
+.light-theme {
+  --primary-bg: rgb(215, 240, 247);
+  --light-bg: hsl(229, 48%, 18%);
+  --transparent-white: rgb(245, 245, 245);
+  --white: black;
+  --black: rgb(240, 235, 235);
+  --orange: orangered;
+  --semi-transparent-white: rgba(58, 55, 55, 0.87);
+  --border-color: rgba(0, 0, 0, 0.089);
+}
+
 body {
-  background-color: hsl(229, 48%, 18%);
+  background-color: var(--primary-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .main {
   width: 75%;
   padding-top: 40px;
 }
 .header {
-  background-color: rgba(245, 245, 245, 0.123);
+  background-color: var(--transparent-white);
   padding: 10px;
   display: flex;
   align-items: center;
@@ -18,13 +42,17 @@ body {
   border-radius: 15px;
 }
 .logo {
-  color: white;
+  color: var(--light-bg);
 }
 .toggle {
-  background-color: rgba(245, 245, 245, 0.123);
+  background-color: var(--transparent-white);
   border: 0px;
   padding: 6px;
   border-radius: 5px;
+  color: black;
+}
+.hide {
+  display: none;
 }
 .nav {
   margin-top: 40px;
@@ -38,31 +66,31 @@ body {
   justify-content: end;
 }
 .nav-heading {
-  color: white;
+  color: var(--light-bg);
   font-size: xx-large;
 }
 .btnList > button {
   padding: 5%;
   padding-left: 15%;
   padding-right: 15%;
-  background-color: rgba(255, 255, 255, 0.055);
-  border: 0.4px solid white;
+  background-color: var(--transparent-white);
+  border: 0.4px solid var(--border-color);
   margin-right: 7%;
   border-radius: 50px;
-  color: white;
+  color: var(--light-bg);
   font-size: 15px;
 }
 .btnList > button:hover {
-  background-color: orangered;
+  background-color: var(--orange);
   border: none;
-  color: black;
+  color: var(--black);
   font-weight: bold;
   cursor: pointer;
 }
 .btnList > button.active {
-  background-color: orangered;
+  background-color: var(--orange);
   border: none;
-  color: black;
+  color: var(--black);
   font-weight: bold;
   cursor: pointer;
 }
@@ -73,18 +101,17 @@ body {
   flex-wrap: wrap;
 }
 .body > div {
-  background-color: aquamarine;
   width: 30%;
   height: 200px;
   padding: 10px 15px 15px 15px;
   border-radius: 15px;
-  border: 0.4px solid rgba(255, 255, 255, 0.253);
-  background-color: rgba(245, 245, 245, 0.123);
+  border: 0.4px solid var(--border-color);
+  background-color: var(--transparent-white);
   display: flex;
   flex-direction: column;
 }
 .extcard {
-  color: rgba(255, 255, 255, 0.493);
+  color: var(--semi-transparent-white);
   display: flex;
   gap: 20px;
   align-items: center;
@@ -97,7 +124,7 @@ body {
   align-items: center;
 }
 .extcard > div:first-child > p > strong {
-  color: white;
+  color: var(--light-bg);
   margin-bottom: 10px;
 }
 .extcard > div:last-child {
@@ -108,9 +135,9 @@ body {
 .extcard > div:last-child > button:first-child {
   padding: 2%;
   background-color: transparent;
-  border: 0.4px solid white;
+  border: 0.4px solid var(--border-color);
   border-radius: 50px;
-  color: white;
+  color: var(--light-bg);
   font-size: 15px;
 }
 
