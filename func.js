@@ -113,7 +113,7 @@ function renderCards() {
 // Initial render after data should be loaded (gives fetch a moment)
 setTimeout(() => {
   renderCards();
-}, 500);
+}, 200);
 
 const buttonGroup = document.querySelector(".btnList");
 const buttons = buttonGroup.querySelectorAll(".menu-button");
